@@ -1,0 +1,29 @@
+.carousel-container {
+  display: block;
+  margin: 0 auto;
+  /* padding: 0 2rem; */
+}
+
+.carousel-inner {
+  /* height: 200px; */
+}
+
+.carousel-item {
+  height: 100%;
+}
+.image-item {
+  /* height: 300px; */
+  display: none;
+}
+.carousel-container img {
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .carousel-container {
+    width: 30%;
+    height: 300px;
+  }
+}

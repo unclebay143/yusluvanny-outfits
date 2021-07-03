@@ -1,0 +1,24 @@
+.sortby-button-container {
+  padding: 2.5rem 0.5rem 1rem 0.5rem;
+}
+
+.sortby-button-container button {
+  background: var(--secondary);
+  outline: var(--secondary);
+  border: var(--secondary);
+}
+
+.sortby-button-container button#sortby:focus,
+.sortby-button-container button#sortby:active {
+  background-color: var(--secondary);
+  outline: none;
+  /* box-shadow: none; */
+  border: none;
+}
+
+@media (min-width: 900px) {
+  .sortby-button-container {
+    margin-top: 10rem;
+    padding: 2rem;
+  }
+}
