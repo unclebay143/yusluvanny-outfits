@@ -1,0 +1,53 @@
+.menu-nav {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 999;
+  margin-top: 60px;
+}
+
+.menu-nav {
+  display: none;
+}
+
+/* open menu */
+.menu-nav.open {
+  display: block;
+}
+
+.menu-nav .menu-nav--links {
+  background-color: var(--white);
+  height: 100%;
+  position: absolute;
+  top: 0;
+  padding-top: 50px;
+  padding-left: 1rem;
+  width: 100%;
+}
+
+.menu-nav--links h4 {
+  line-height: 2;
+}
+.menu-nav--links ul {
+  margin-bottom: 3rem;
+}
+.menu-nav--links li {
+  line-height: 2;
+}
+
+.developer {
+  text-align: center;
+  font-weight: 600;
+  /* text-align: center; */
+  /* display: block; */
+}
+
+@media (min-width: 900px) {
+  .menu-nav .menu-nav--links {
+    width: 100%;
+    padding-left: 1.8rem;
+  }
+}

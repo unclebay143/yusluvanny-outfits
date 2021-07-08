@@ -1,22 +1,52 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./navbar.css";
-import { faBars, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, Form } from "react-bootstrap";
+import { Menu } from "../menu/Menu";
 
 export const NavBar = () => {
+  const [isNavbarOpen, setIsNavbarOpen] = useState(false);
+
+  // Hamburger menu func
+  const handleNavbarToggle = () => {
+    document.querySelector(".menu-nav").classList.toggle("open");
+    setIsNavbarOpen(!isNavbarOpen);
+  };
   return (
     <React.Fragment>
+      <Menu />
       <header>
-        <section className="top-navbar">
-          <FontAwesomeIcon icon={faBars} className="hamburger" />
+        <section className="top-navbar" onClick={() => handleNavbarToggle()}>
+          <FontAwesomeIcon
+            icon={isNavbarOpen ? faTimes : faBars}
+            className="hamburger"
+          />
         </section>
         <h1 className="big-screen-label">Yusluvanny Outfits</h1>
         <section className="social-media-icon">
-          <i className="fab fa-facebook"></i>
-          <i className="fab fa-twitter"></i>
-          <i className="fab fa-instagram"></i>
+          <a
+            href="https://www.facebook.com/yusuf.animashaun.161"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-facebook-square"></i>
+          </a>
+          <a
+            href="https://api.whatsapp.com/send?phone=2349061610159&text=Hello Yusluvanny,"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-whatsapp"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/yusluvannyoutfit_/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-instagram"></i>
+          </a>
         </section>
       </header>
       <section className="header-brand">

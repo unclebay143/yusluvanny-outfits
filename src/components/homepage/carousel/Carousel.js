@@ -31,7 +31,7 @@ export const ControlledCarousel = () => {
         <Carousel activeIndex={index} onSelect={handleSelect}>
           {data?.map((slide, index) => {
             return (
-              <Carousel.Item className="image-item">
+              <Carousel.Item key={index} className="image-item">
                 <img
                   className="d-block w-100"
                   src={slide.image}

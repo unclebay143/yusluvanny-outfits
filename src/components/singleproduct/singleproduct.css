@@ -1,6 +1,13 @@
 .single-product {
   margin-bottom: 4rem;
 }
+.single-product .details {
+  margin-top: 2rem;
+}
+.single-product .description {
+  text-transform: capitalize;
+}
+
 .single-product .send-order-btn {
   border: none;
   box-shadow: none;
@@ -27,17 +34,25 @@
 
 .single-product-button-group {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
 .continue-shopping {
   text-transform: capitalize;
   align-self: flex-end;
+  margin-left: 1rem;
 }
 
 .continue-shopping:hover {
   color: var(--primary);
+}
+
+.single-product .image-wrapper {
+  width: 250px;
+}
+
+.single-product-image {
+  width: 100%;
 }
 
 @media (min-width: 900px) {
@@ -53,12 +68,14 @@
   }
 
   .single-product-image {
-    border-radius: 15px;
+    border-radius: 10px;
   }
 
   .single-product-button-group {
     width: 100%;
     gap: 1rem;
     margin-top: 2rem;
+    margin-left: 0rem;
+    justify-content: space-between;
   }
 }

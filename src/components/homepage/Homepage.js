@@ -1,35 +1,30 @@
-import { faSpinner } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
-import { NavBar } from "../layouts/navbar/NavBar";
 import { ControlledCarousel } from "./carousel/Carousel";
 import "./homepage.css";
-import { SortButton } from "./sortbutton/SortButton";
 import { TwoRowProducts } from "./tworowproducts/TwoRowProducts";
+import { GoldenLoader } from "./../layouts/loader/GoldenLoader";
 
 export const Homepage = () => {
-  const [isLoaded, setisLoaded] = useState(false);
+  const [isLoading, setisLoading] = useState(true);
+
   useEffect(() => {
     const delay = setTimeout(() => {
-      setisLoaded(true);
-    }, 3000);
+      setisLoading(false);
+    }, 1000);
 
     return () => {
       clearTimeout(delay);
     };
   }, []);
 
+  // if (isLoading) {
+  //   return <GoldenLoader />;
+  // }
+
   return (
     <React.Fragment>
       <div className="homepage">
-        {isLoaded ? (
-          <ControlledCarousel />
-        ) : (
-          <div className="text-center">
-            <FontAwesomeIcon icon={faSpinner} spin />
-          </div>
-        )}
-        <SortButton />
+        <ControlledCarousel />
         <TwoRowProducts />
       </div>
     </React.Fragment>

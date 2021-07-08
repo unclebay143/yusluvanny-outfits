@@ -1,4 +1,12 @@
-.homepage {
-  /* max-width: 1400px; */
-  /* background-color: black; */
+.homepage-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+.homepage-loader svg {
+  font-weight: 900;
+  font-size: 3rem;
+  color: var(--primary);
 }

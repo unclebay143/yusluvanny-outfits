@@ -21,7 +21,7 @@
   display: none;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 500px) {
   .carousel-container {
     width: 30%;
     height: 300px;
