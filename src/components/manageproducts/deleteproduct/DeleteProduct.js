@@ -9,7 +9,9 @@ export const DeleteProduct = () => {
 
   useEffect(() => {
     async function fetchProducts() {
-      const { data } = await axios.get("http://localhost:3003/products/all");
+      const { data } = await axios.get(
+        `${process.env.REACT_APP_STORE_ENDPOINT}/products/all`
+      );
       setProducts(data.data);
     }
     fetchProducts();
@@ -26,9 +28,14 @@ export const DeleteProduct = () => {
       imgExtension: imgExtension.slice(0, -1),
     };
 
-    axios.put("http://localhost:3003/products/delete", selectedProductID);
+    axios.put(
+      `${process.env.REACT_APP_STORE_ENDPOINT}/products/delete`,
+      selectedProductID
+    );
     // Refresh page
-    window.location.reload();
+    setTimeout(() => {
+      window.location.reload();
+    }, 2000);
   };
 
   return (

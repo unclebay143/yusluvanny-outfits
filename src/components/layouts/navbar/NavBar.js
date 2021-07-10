@@ -5,6 +5,7 @@ import { faBars, faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, Form } from "react-bootstrap";
 import { Menu } from "../menu/Menu";
+import logo from "./../../../assets/carousel-1.jpg";
 
 export const NavBar = () => {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
@@ -50,7 +51,10 @@ export const NavBar = () => {
         </section>
       </header>
       <section className="header-brand">
-        <h1 className="small-screen-label">Yusluvanny Outfits</h1>
+        <h1 className="small-screen-label">
+          Yusluvanny Outfits
+          {/* <img src={logo} width="100" /> */}
+        </h1>
         <Form className="d-none">
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Control type="text" placeholder="Search for cloth, shoe" />

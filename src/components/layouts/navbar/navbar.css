@@ -15,6 +15,7 @@ header .big-screen-label {
   padding: 0.8rem;
   color: var(--primary);
   font-weight: 900;
+  background: var(--secondary);
 }
 
 .hamburger {

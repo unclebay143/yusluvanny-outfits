@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
-import tshirt from "./../../../assets/t-shirt.jpg";
-import belt from "./../../../assets/belt.jpg";
+import carouselImage1 from "./../../../assets/carousel-1.jpg";
+import carouselImage2 from "./../../../assets/carousel-2.jpg";
+import carouselImage3 from "./../../../assets/carousel-3.jpg";
 import watch from "./../../../assets/watch.jpg";
 
 import "./carousel.css";
@@ -15,13 +16,13 @@ export const ControlledCarousel = () => {
 
   const data = [
     {
-      image: belt,
+      image: carouselImage1,
     },
     {
-      image: watch,
+      image: carouselImage2,
     },
     {
-      image: tshirt,
+      image: carouselImage3,
     },
   ];
 

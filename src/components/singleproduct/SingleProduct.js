@@ -15,7 +15,9 @@ export const SingleProduct = () => {
 
   useEffect(() => {
     async function fetchProducts() {
-      const { data } = await axios.get("http://localhost:3003/products/all");
+      const { data } = await axios.get(
+        `${process.env.REACT_APP_STORE_ENDPOINT}/products/all`
+      );
       const getSelectedProduct = data.data.filter(
         (product) => product.image_url === id
       );
@@ -37,10 +39,9 @@ export const SingleProduct = () => {
         <section className="container single-product">
           <div className="row image-wrapper">
             <img
-              src={`https://res.cloudinary.com/drk2xigke/image/upload/v1625524208/yuslovanny/${image_url}.${imgExtension.slice(
-                0,
-                -1
-              )}`}
+              src={`${
+                process.env.REACT_APP_CLOUDINARY_IMAGE_URL
+              }/${image_url}.${imgExtension.slice(0, -1)}`}
               alt={`${productName}-${productPrice}`}
               className="single-product-image"
               width="250"
@@ -51,7 +52,7 @@ export const SingleProduct = () => {
             <p className="price">#{productPrice}</p>
             <section className="single-product-button-group">
               <a
-                href={`https://api.whatsapp.com/send?phone=2349061610159&text=Hello, I want to make an order for the ${productName} which cost ${productPrice} `}
+                href={`https://api.whatsapp.com/send?phone=2348120110105&text=Hello, I want to make an order for the ${productName} which cost ${productPrice} `}
                 target="_blank"
                 rel="noopener noreferrer"
               >

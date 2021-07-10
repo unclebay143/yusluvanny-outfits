@@ -17,9 +17,9 @@ export const Homepage = () => {
     };
   }, []);
 
-  // if (isLoading) {
-  //   return <GoldenLoader />;
-  // }
+  if (isLoading) {
+    return <GoldenLoader />;
+  }
 
   return (
     <React.Fragment>

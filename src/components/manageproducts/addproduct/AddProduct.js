@@ -6,7 +6,6 @@ import { pageUrl } from "../../constants/pageurl";
 export const AddProduct = () => {
   const [productName, setproductName] = useState("");
   const [productPrice, setproductPrice] = useState("");
-  const [productImage, setProductImage] = useState(null);
   const [convertedImage, setConvertedImage] = useState(null);
   const [message, setMessage] = useState();
   const [error, setError] = useState();
@@ -24,24 +23,32 @@ export const AddProduct = () => {
 
   const handleFileChange = (e) => {
     const { files } = e.target;
-    setProductImage(files[0]);
-  };
-
-  const handleSubmit = async (e) => {
-    setLoading(true);
-    //
-    e.preventDefault();
-
     const reader = new FileReader();
-    productImage !== null && reader.readAsDataURL(productImage);
+    reader.readAsDataURL(files[0]);
 
     reader.onloadend = () => {
-      //   console.log(reader.result);
+      // set image data url
       setConvertedImage(reader.result);
     };
     reader.onerror = () => {
       console.error("something went wrong!");
     };
+  };
+
+  const handleSubmit = async (e) => {
+    //
+    e.preventDefault();
+
+    // const reader = new FileReader();
+    // productImage !== null && reader.readAsDataURL(productImage);
+
+    // reader.onloadend = () => {
+    //   //   console.log(reader.result);
+    //   setConvertedImage(reader.result);
+    // };
+    // reader.onerror = () => {
+    //   console.error("something went wrong!");
+    // };
 
     const newProductDetails = {
       productName,
@@ -56,17 +63,26 @@ export const AddProduct = () => {
     try {
       console.log(convertedImage);
 
-      convertedImage &&
-        (await axios.post("http://localhost:3003/products/upload", data, {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }));
-      setMessage("Product Added Successfully");
-      setLoading(false);
-      setTimeout(() => {
-        window.location.reload();
-      }, 2000);
+      if (convertedImage) {
+        setLoading(true);
+        const res = await axios.post(
+          `${process.env.REACT_APP_STORE_ENDPOINT}/products/upload`,
+          data,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        );
+        console.log(res);
+        setMessage("Product Added Successfully");
+        setLoading(false);
+        setTimeout(() => {
+          window.location.reload();
+        }, 2000);
+      } else {
+        setMessage("Add again");
+      }
     } catch (error) {
       console.error(error);
       setError("Upload your image again");
@@ -77,9 +93,6 @@ export const AddProduct = () => {
       }, 2000);
     }
   };
-
-  console.log(productImage);
-  console.log(convertedImage);
 
   return (
     <React.Fragment>
@@ -122,7 +135,6 @@ export const AddProduct = () => {
               name="file"
               className="add-product--input"
               onChange={handleFileChange}
-              //   value={newProduct.productImage}
             />
           </div>
 

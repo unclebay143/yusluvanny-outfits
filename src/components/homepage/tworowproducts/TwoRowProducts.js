@@ -16,7 +16,9 @@ export const TwoRowProducts = () => {
 
   useEffect(() => {
     async function fetchProducts() {
-      const { data } = await axios.get("http://localhost:3003/products/all");
+      const { data } = await axios.get(
+        `${process.env.REACT_APP_STORE_ENDPOINT}/products/all`
+      );
       setProducts(data.data);
     }
     fetchProducts();
