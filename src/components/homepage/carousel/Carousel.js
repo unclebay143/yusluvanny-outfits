@@ -3,8 +3,6 @@ import Carousel from "react-bootstrap/Carousel";
 import carouselImage1 from "./../../../assets/carousel-1.jpg";
 import carouselImage2 from "./../../../assets/carousel-2.jpg";
 import carouselImage3 from "./../../../assets/carousel-3.jpg";
-import watch from "./../../../assets/watch.jpg";
-
 import "./carousel.css";
 
 export const ControlledCarousel = () => {

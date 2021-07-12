@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { pageUrl } from "../../constants/pageurl";
 
+import "./addproduct.css";
+
 export const AddProduct = () => {
   const [productName, setproductName] = useState("");
   const [productPrice, setproductPrice] = useState("");
@@ -133,7 +135,6 @@ export const AddProduct = () => {
               required
               type="file"
               name="file"
-              className="add-product--input"
               onChange={handleFileChange}
             />
           </div>
@@ -145,12 +146,15 @@ export const AddProduct = () => {
             </label>
           </div>
           <div className="add-product-input-wrapper d-flex flex-column mb-3">
-            <button type="submit" className="p-2 mt-2">
+            <button type="submit" className="add-product-btn p-2 mt-2">
               {loading ? "Adding" : "Submit"}
             </button>
           </div>
-          <div className="mb-5">
-            <Link to={pageUrl.HOME_PAGE}>Back to store</Link>
+          <div className="mb-5 d-flex justify-content-between">
+            <a href={`/#${pageUrl.HOME_PAGE}`}>Back to store</a>
+            <a href={`/#${pageUrl.DELETE_PRODUCT}`} className="text-danger">
+              Delete Product
+            </a>
           </div>
         </form>
       </div>

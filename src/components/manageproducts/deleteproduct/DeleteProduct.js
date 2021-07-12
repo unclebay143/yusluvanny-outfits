@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { pageUrl } from "../../constants/pageurl";
 
 export const DeleteProduct = () => {
   const [products, setProducts] = useState();
@@ -41,6 +43,10 @@ export const DeleteProduct = () => {
   return (
     <React.Fragment>
       <div className="container">
+        <div className="d-flex justify-content-between mb-2">
+          <a href={`/#${pageUrl.ADD_PRODUCT}`}>Add Product</a>
+          <a href={`/#${pageUrl.HOME_PAGE}`}>Back to store</a>
+        </div>
         <Table striped bordered hover responsive>
           <thead>
             <tr>

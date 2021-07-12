@@ -19,7 +19,7 @@ export const Menu = () => {
           <ul>
             <li>Email: yusluvanny1@gmail.com</li>
 
-            <li>Mobile number: 0020801552</li>
+            <li>Mobile number: 08120110105</li>
 
             <li>Shop Location: </li>
           </ul>

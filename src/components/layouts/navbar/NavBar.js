@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 
 import "./navbar.css";
-import { faBars, faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, Form } from "react-bootstrap";
 import { Menu } from "../menu/Menu";
-import logo from "./../../../assets/carousel-1.jpg";
 
 export const NavBar = () => {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
@@ -35,7 +34,7 @@ export const NavBar = () => {
             <i className="fab fa-facebook-square"></i>
           </a>
           <a
-            href="https://api.whatsapp.com/send?phone=2349061610159&text=Hello Yusluvanny,"
+            href="https://api.whatsapp.com/send?phone=2348120110105&text=Hello Yusluvanny,"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -53,14 +52,14 @@ export const NavBar = () => {
       <section className="header-brand">
         <h1 className="small-screen-label">
           Yusluvanny Outfits
-          {/* <img src={logo} width="100" /> */}
+          {/* w<img src={logo} width="100" /> */}
         </h1>
         <Form className="d-none">
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Control type="text" placeholder="Search for cloth, shoe" />
             <Button className="d-flex justify-content-center align-items-center">
               Search
-              {/* <FontAwesomeIcon icon={faSearch} /> */}
+              {/* <FontAwesomeIcon icon={/> */}
             </Button>
           </Form.Group>
         </Form>
